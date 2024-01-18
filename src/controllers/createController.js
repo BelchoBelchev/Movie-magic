@@ -17,6 +17,8 @@ router.post('/create', (req, res) => {
 router.get('/details/:id', (req, res) => {
     const movieId = req.params.id;
     const movie = movieService.getOne(movieId);
+    
+    movie.rating = new Array(Number(movie.rating)).fill(true);
 
     res.render('details', { movie });
 });

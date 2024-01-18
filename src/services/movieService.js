@@ -5,7 +5,7 @@ const movies = [{
     director: 'Belcho Belchev',
     year: '2024',
     imageUrl: '/img/jungle-cruise.jpeg',
-    rating: '4',
+    rating: 4,
     description: 'Jungle action/comedy'
 }];
 
