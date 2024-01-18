@@ -8,6 +8,10 @@ const movies = [{
     description: 'Jungle action/comedy'
 }];
 
+exports.getAll = () => {
+    return movies.slice();
+};
+
 exports.create = (movieData) => {
     movies.push(movieData);
 }; 
