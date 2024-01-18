@@ -13,6 +13,10 @@ exports.getAll = () => {
     return movies.slice();
 };
 
+exports.getOne = (id) => {
+    return movies.find(movie => movie._id == id);
+}
+
 exports.create = (movieData) => {
 
     movieData._id = movies[movies.length - 1]._id + 1;
