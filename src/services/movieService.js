@@ -1,18 +1,8 @@
 const Movie = require('../models/Movie');
 
-const movies = [{
-    _id: 1,
-    title: 'Jungle Cruise',
-    genre: 'Adventure',
-    director: 'Belcho Belchev',
-    year: '2024',
-    imageUrl: '/img/jungle-cruise.jpeg',
-    rating: 4,
-    description: 'Jungle action/comedy'
-}];
-
-exports.getAll = () => {
-    return movies.slice();
+exports.getAll =  () => {
+    const movies = Movie.find();
+    return movies;
 };
 
 exports.getOne = (id) => {
