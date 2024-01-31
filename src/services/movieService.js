@@ -1,12 +1,13 @@
 const Movie = require('../models/Movie');
 
-exports.getAll =  () => {
+exports.getAll = () => {
     const movies = Movie.find();
     return movies;
 };
 
 exports.getOne = (id) => {
-    return movies.find(movie => movie._id == id);
+    const movie = Movie.findById(id);
+    return movie;
 }
 
 exports.search = (title, genre, year) => {
