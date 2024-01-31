@@ -11,7 +11,7 @@ exports.getOne = (id) => {
 }
 
 exports.search = (title, genre, year) => {
-    let search = movies.slice();
+    let search = Movie.find();
 
     if (title) {
         search = search.filter(movie => movie.title.toLocaleLowerCase().includes(title.toLocaleLowerCase()));
