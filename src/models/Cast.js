@@ -11,12 +11,16 @@ const castSchema = new mongoose.Schema({
         min: 10,
         max: 60,
     },
-    nameInMovie: {
+    born: {
+        type: String,
+        required: true,
+    },
+    nameInMovies: {
         type: String,
         required: true,
 
     },
-    imageUrl: {
+    castImage: {
         type: String,
         required: true,
         match: /^https?/,
