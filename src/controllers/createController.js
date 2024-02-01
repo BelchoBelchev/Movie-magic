@@ -22,11 +22,11 @@ router.post('/create', async (req, res) => {
 router.get('/details/:id', async (req, res) => {
     const movieId = req.params.id;
     const movie = await movieService.getOne(movieId).lean();
-    const casts = await castService.getByIds(movie.casts).lean();
+    //const casts = await castService.getByIds(movie.casts).lean();
 
     movie.rating = new Array(Number(movie.rating)).fill(true);
 
-    res.render('details', { movie, casts });
+    res.render('details', { movie });
 });
 
 router.get('/attach/cast/:id', async (req, res) => {

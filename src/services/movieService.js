@@ -6,26 +6,26 @@ exports.getAll = () => {
 };
 
 exports.getOne = (id) => {
-    const movie = Movie.findById(id);
+    const movie = Movie.findById(id).populate('casts');
     return movie;
 }
 
 exports.search = (title, genre, year) => {
-    let search = Movie.find();
+    let query = Movie.find();
 
     if (title) {
-        search = search.filter(movie => movie.title.toLocaleLowerCase().includes(title.toLocaleLowerCase()));
+        query = query.find({ title: new RegExp(title, 'i') });
     }
 
     if (genre) {
-        search = search.filter(movie => movie.genre.toLocaleLowerCase() === genre.toLocaleLowerCase());
+        query = query.find({ genre: genre.toLowerCase() });
     }
 
     if (year) {
-        search = search.filter(movie => movie.year === year);
+        query = query.find({ year });
     }
 
-    return search;
+    return query;
 
 };
 

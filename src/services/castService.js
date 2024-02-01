@@ -10,8 +10,8 @@ exports.getAll = () => {
     return result;
 }
 
-exports.getByIds = (castIds) => {
-    const casts = Cast.find({ _id: { $in: castIds } });
+//exports.getByIds = (castIds) => {
+    //const casts = Cast.find({ _id: { $in: castIds } });
 
-    return casts;
-};
+    //return casts;
+//};
