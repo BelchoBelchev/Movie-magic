@@ -5,3 +5,7 @@ exports.create = (castData) => {
     return result;
 };
 
+exports.getAll = () => {
+    const result = Cast.find();
+    return result;
+}
