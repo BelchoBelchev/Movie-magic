@@ -9,7 +9,7 @@ const castSchema = new mongoose.Schema({
         type: Number,
         required: true,
         min: 10,
-        max: 60,
+        max: 100,
     },
     born: {
         type: String,
