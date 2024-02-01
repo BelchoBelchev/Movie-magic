@@ -34,6 +34,10 @@ const movieSchema = new mongoose.Schema({
         required: true,
         maxLength: 1000,
     },
+    casts: [{
+        type: mongoose.Types.ObjectId,
+        ref: 'Cast',
+    }]
 });
 
 const Movie = mongoose.model('Movie', movieSchema);
