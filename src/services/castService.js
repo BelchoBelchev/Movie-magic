@@ -4,3 +4,4 @@ exports.create = (castData) => {
     const result = Cast.create(castData);
     return result;
 };
+
