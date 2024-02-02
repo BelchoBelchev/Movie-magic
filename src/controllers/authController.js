@@ -1,19 +1,17 @@
 const router = require('express').Router();
 
-const movieService = require('../services/movieService');
+const authService = require('../services/authService');
 
 router.get('/register', (req, res) => {
     res.render('register');
 });
 
-router.get('/login', (req, res) => {
-    res.render('login');
-});
+router.post('/register', async (req, res) => {
+    const userData = req.body;
 
-router.get('/edit/:id', async (req, res) => {
-    const movie = await movieService.getOne(req.params.id).lean();
+    await authService.register(userData);
 
-    res.render('edit', { movie });
+    res.redirect('/login');
 });
 
 module.exports = router;
