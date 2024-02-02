@@ -12,7 +12,7 @@ router.get('/login', (req, res) => {
 
 router.get('/edit/:id', async (req, res) => {
     const movie = await movieService.getOne(req.params.id).lean();
-    
+
     res.render('edit', { movie });
 });
 
