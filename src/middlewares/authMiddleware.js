@@ -14,11 +14,11 @@ exports.auth = async (req, res, next) => {
         const decodedToken = await jwt.verify(token, secret);
 
         req.user = decodedToken;
-
+        
         next();
 
     } catch (err) {
-        res.clearcookie('auth');
+        res.clearCookie('auth');
         res.redirect('/login');
     }
 };

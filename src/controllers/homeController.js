@@ -5,8 +5,8 @@ const movieService = require('../services/movieService');
 router.get('/', async (req, res) => {
 
     const movies = await movieService.getAll().lean();
-
-    res.render('home', { movies });
+    const isAuthenticated = !!req.user;
+    res.render('home', { movies, isAuthenticated });
 });
 
 router.get('/about', (req, res) => {
