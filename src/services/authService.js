@@ -1,8 +1,7 @@
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const jwt = require('../lib/jsonWebToken');
-
-const secret = '^W@@@@&^B@@@@@@$'
+const { secret } = require('../config/config');
 
 exports.register = (userData) => {
     User.create(userData);
