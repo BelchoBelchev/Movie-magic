@@ -32,4 +32,8 @@ exports.search = (title, genre, year) => {
 exports.create = async (movieData) => {
     const result = await Movie.create(movieData);
     return result;
-}; 
+};
+
+exports.delete = async (id) => {
+    await Movie.findByIdAndDelete(id);
+}

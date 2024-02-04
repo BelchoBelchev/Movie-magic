@@ -60,6 +60,10 @@ router.get('/edit/:id', isAuth, async (req, res) => {
     res.render('edit', { movie });
 });
 
+router.get('/delete/:id', isAuth, async (req, res) => {
+    await movieService.delete(req.params.id);
 
+    res.redirect('/');
+});
 
 module.exports = router;
