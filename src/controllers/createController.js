@@ -21,7 +21,7 @@ router.post('/create', isAuth, async (req, res) => {
     }
 });
 
-router.get('/details/:id', isAuth, async (req, res) => {
+router.get('/details/:id', async (req, res) => {
     const movieId = req.params.id;
     const movie = await movieService.getOne(movieId).lean();
 
