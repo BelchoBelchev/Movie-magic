@@ -6,6 +6,7 @@ router.get('/', async (req, res) => {
 
     const movies = await movieService.getAll().lean();
     const isAuthenticated = !!req.user;
+   
     res.render('home', { movies, isAuthenticated });
 });
 
